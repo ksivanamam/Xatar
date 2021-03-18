@@ -1,0 +1,25 @@
+{
+  "name": "xatar",
+  "version": "1.0.0",
+  "description": "Private music bot for Discord. I might add some additional features.",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksivanamam/Xatar.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "Kabilan Sivanamam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksivanamam/Xatar/issues"
+  },
+  "homepage": "https://github.com/ksivanamam/Xatar#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}

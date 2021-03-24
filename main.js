@@ -23,7 +23,7 @@ client.on('message', message => {
 		var command = args.shift().toLocaleLowerCase()
 
 		if (command === 'ping') {
-			client.commands.get('ping').execute(message.args)
+			client.commands.get('ping').execute(message, args)
 		}
 	}
 })

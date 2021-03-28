@@ -1,9 +1,9 @@
-var discord = require('discord.js')
-var client = new discord.Client()
+var Discord = require('discord.js')
+var client = new Discord.Client()
 var prefix = '.'
 var fs = require('fs')
 
-client.commands = new discord.Collection()
+client.commands = new Discord.Collection()
 
 var commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
 for (var file of commandFiles) {
@@ -24,8 +24,16 @@ client.on('message', message => {
 
 		if (command === 'ping') {
 			client.commands.get('ping').execute(message, args)
-		} else if (comand === 'shit') {
-
+		} else if (command === 'sag') {
+			client.commands.get('sag').execute(message, args)
+		} else if (command === 'scheissauf') {
+			client.commands.get('scheissauf').execute(message, args, Discord)
+		} else if (command === 'schulzeit') {
+			client.commands.get('schulzeit').execute(message, args)
+		} else if (command === 'curry') {
+			client.commands.get('curry').execute(message, args, Discord)
+		} else if (command === 'clear') {
+			client.commands.get('clear').execute(message, args)
 		}
 	}
 })

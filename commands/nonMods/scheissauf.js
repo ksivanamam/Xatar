@@ -15,7 +15,8 @@ module.exports = {
 				function generateDiss() {
 					while (setDisses.length < 3) {
 						var r = Math.floor(Math.random() * disses.length)
-						if (setDisses.indexOf(r) === -1) setDisses.push(r);
+						if (setDisses.indexOf(r) === -1) setDisses.push(r)
+						console.log(setDisses)
 					}
 				}
 				generateDiss()

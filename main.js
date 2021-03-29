@@ -5,9 +5,14 @@ var fs = require('fs')
 
 client.commands = new Discord.Collection()
 
-var commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
-for (var file of commandFiles) {
-	var command = require(`./commands/${file}`)
+var nonModsCommandFiles = fs.readdirSync('./commands/nonMods').filter(file => file.endsWith('.js'))
+for (var file of nonModsCommandFiles) {
+	var command = require(`./commands/nonMods/${file}`)
+	client.commands.set(command.name, command)
+}
+var modsCommandFiles = fs.readdirSync('./commands/mods').filter(file => file.endsWith('.js'))
+for (var file of modsCommandFiles) {
+	var command = require(`./commands/mods/${file}`)
 	client.commands.set(command.name, command)
 }
 

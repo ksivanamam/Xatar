@@ -8,7 +8,7 @@ module.exports = {
 				let successResponse = rawResponse.replace(/,/g, ' ')
 				message.channel.send(successResponse)
 			} else {
-				let failureResponse = 'Nur die Babas aller Babas können pingen akho...'
+				let failureResponse = 'Nur die Babas aller Babas können mich zur Schwuchtel machen akho...'
 				message.channel.send(failureResponse)
 			}
 		} catch (error) {

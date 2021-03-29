@@ -4,7 +4,7 @@ module.exports = {
    async execute(message, args) {
 	   try {
 		   if (!args[0]) {
-			   return message.reply('Gib Anzahl Zeilen an du Kek.')
+			   return message.reply('Gib Anzahl Zeilen an du Pislik.')
 		   } else if (isNaN(args[0])) {
 			   return message.reply('ANZAHL heisst eine Zahl du Hurensohn...')
 		   } else if (args[0] > 100) {

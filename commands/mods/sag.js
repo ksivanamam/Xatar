@@ -3,7 +3,7 @@ module.exports = {
 	description: 'This is a repeat command.',
 	execute(message, args) {
 		try {
-			if (message.member.roles.cache.some(r => r.name === 'Devs')) {
+			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde')) {
 				let rawResponse = args.toString()
 				let successResponse = rawResponse.replace(/,/g, ' ')
 				message.channel.send(successResponse)

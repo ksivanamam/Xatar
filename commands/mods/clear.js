@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Clears text messages in chat.',
 	async execute(message, args) {
 		try {
-			if (message.member.roles.cache.some(r => r.name === 'Devs')) {
+			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde')) {
 				if (!args[0]) {
 					return message.reply('Gib Anzahl Zeilen an du Pislik.')
 				} else if (isNaN(args[0])) {

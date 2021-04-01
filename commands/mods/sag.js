@@ -5,8 +5,9 @@ module.exports = {
 		try {
 			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde')) {
 				let rawResponse = args.toString()
+				let test = args[0]
 				let successResponse = rawResponse.replace(/,/g, ' ')
-				message.channel.send(successResponse)
+				message.channel.send(test)
 			} else {
 				let failureResponse = 'Nur die Babas aller Babas können mich zur Schwuchtel machen akho...'
 				message.channel.send(failureResponse)

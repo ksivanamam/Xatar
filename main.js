@@ -15,6 +15,11 @@ for (var file of modsCommandFiles) {
 	var command = require(`./commands/mods/${file}`)
 	client.commands.set(command.name, command)
 }
+var adminCommandFiles = fs.readdirSync('./commands/admin').filter(file => file.endsWith('.js'))
+for (var file of adminCommandFiles) {
+	var command = require(`./commands/admin/${file}`)
+	client.commands.set(command.name, command)
+}
 
 client.once('ready', () => {
 	console.log('Xatar iz da!')

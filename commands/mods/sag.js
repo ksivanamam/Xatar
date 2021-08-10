@@ -3,11 +3,11 @@ module.exports = {
 	description: 'This is a repeat command.',
 	execute(message, args) {
 		try {
-			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde')) {
+			if (message.member.roles.cache.some(r => r.name === 'Devs' || r.name === 'Mods')) {
 				let rawResponse = args.toString()
 				let test = args[0]
 				let successResponse = rawResponse.replace(/,/g, ' ')
-				message.channel.send(test)
+				message.channel.send(successResponse)
 			} else {
 				let failureResponse = 'Nur die Babas aller Babas können mich zur Schwuchtel machen akho...'
 				message.channel.send(failureResponse)

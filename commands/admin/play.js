@@ -24,25 +24,18 @@ module.exports = {
 			}
 
 			if (validURL(args[0])) {
-				
-				ytdl(args[0]).pipe(fs.createWriteStream("video.mp4")).on("finish", function() {
-					console.log("Finished!");
-				  });
-				
-				/*const connection = await voiceChannel.join();
+
+				const connection = await voiceChannel.join();
 				const stream = ytdl(args[0])
-				stream.pipe(fs.createWriteStream("video.mp4"));
-				stream.on('finish', () => {
-					console.log('dl finished');
-				})
+
 				connection.play(stream, {
 						seek: 0,
-						volume: 5
+						volume: 1
 					})
 					.on('finish', () => {
 						voiceChannel.leave();
 						message.channel.send('Bruda muss los... Handyakku fast leer.');
-					}); */
+					});
 
 				await message.reply(`:thumbsup: Jetzt läuft: ***Dein Link!***`)
 

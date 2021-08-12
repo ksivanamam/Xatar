@@ -3,7 +3,7 @@ module.exports = {
 	description: 'This is a repeat command.',
 	execute(message, args) {
 		try {
-			if (message.member.roles.cache.some(r => r.name === 'Devs' || r.name === 'Mods')) {
+			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde' || r.name === 'Store manager')) {
 				let rawResponse = args.toString()
 				let test = args[0]
 				let successResponse = rawResponse.replace(/,/g, ' ')

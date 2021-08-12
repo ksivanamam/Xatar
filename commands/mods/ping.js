@@ -3,7 +3,7 @@ module.exports = {
 	description: 'This is a ping command.',
 	execute(message, args) {
 		try {
-			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde')) {
+			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde' || r.name === 'Store manager')) {
 				let successResponse = 'PONG'
 				message.channel.send(successResponse)
 			} else {

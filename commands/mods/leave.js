@@ -3,7 +3,7 @@ module.exports = {
 	description: 'stop the bot and leave the channel',
 	async execute(message, args) {
 		try {
-			if (message.member.roles.cache.some(r => r.name === 'Store manager')) {
+			if (message.member.roles.cache.some(r => r.name === 'Store Manager' || r.name === 'RAV Stammkunde')) {
 				const voiceChannel = message.member.voice.channel;
 
 				if (!voiceChannel) return message.channel.send("Du musst in einem Chat sein um mich zu stoppen...!");

@@ -9,6 +9,10 @@ module.exports = {
 			} else {
 				var rawReciever = args[0].toString()
 				var reciever = rawReciever.replace(/,/g, ' ')
+				var aliDisses = [`${reciever} hat zwei TF Bern Lehrabschlüsse...`,]
+				var domiDisses = []
+				var hezeDisses = []
+				var kabiDisses = []
 				var disses = [`${reciever} hat einen TF Bern Lehrabschluss.`, `${reciever} hat zwei TF Bern Lehrabschlüsse...`, `${reciever} hat Pickel am Yarak.`, `${reciever} ist schwul.`, `${reciever} lutsch Eier.`, `Karroten isst ${reciever} am liebsten mit Fler-Kot-Dip...`, `${reciever} hat Hodenkrebs.`, `${reciever} fickt nicht mal dickere Frauen.`, `${reciever} ist ein Incel.`, `${reciever} trinkt sein eigenes Sperma an Ramadan weil halal.`, `${reciever} ist flodder flodder...`, `${reciever} spielt american handball.`, `${reciever} seine mudda ist eine hure.`, `${reciever} hat Hodenkrebs.`]
 				var setDisses = []
 

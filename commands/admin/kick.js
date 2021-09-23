@@ -3,7 +3,7 @@ module.exports = {
 	description: 'command to kick members',
 	execute(message, args) {
 		try {
-			if (message.member.roles.cache.some(r => r.name === 'Store manager')) {
+			if (message.member.roles.cache.some(r => r.name === 'Store Manager')) {
 				var member = message.mentions.users.first()
 				if (member) {
 					var memberTarget = message.guild.members.cache.get(member.id)

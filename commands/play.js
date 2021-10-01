@@ -193,6 +193,7 @@ const skip_song = (message, server_queue) => {
 
 const stop_song = (message, server_queue) => {
 	if (!message.member.voice.channel) return message.channel.send('Du musst in einem Channel sein akho...!');
+	message.channel.send('Ich hör ja schon auf...')
 	server_queue.songs = [];
 	server_queue.connection.dispatcher.end();
 }

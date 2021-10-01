@@ -6,6 +6,7 @@ module.exports = {
 			if (message.member.roles.cache.some(r => r.name === 'RAV Stammkunde' || r.name === 'Store manager')) {
 				let successResponse = 'PONG'
 				message.channel.send(successResponse)
+				console.log('Xatar has answerd a ping request sent by', message.author.username);
 			} else {
 				let failureResponse = 'Nur die Babas aller Babas können pingen akho...'
 				message.channel.send(failureResponse)

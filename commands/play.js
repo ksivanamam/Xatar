@@ -96,15 +96,15 @@ module.exports = {
 
 
 		const voice_channel = message.member.voice.channel;
-		if (!voice_channel) return message.channel.send('You need to be in a channel to execute this command!');
+		if (!voice_channel) return message.channel.send('Du musst in einem Channel sein akho...');
 		const permissions = voice_channel.permissionsFor(message.client.user);
-		if (!permissions.has('CONNECT')) return message.channel.send('You dont have the correct permissins');
-		if (!permissions.has('SPEAK')) return message.channel.send('You dont have the correct permissins');
+		if (!permissions.has('CONNECT')) return message.channel.send('Keine Rechte!');
+		if (!permissions.has('SPEAK')) return message.channel.send('Keine Rechte!');
 
 		const server_queue = queue.get(message.guild.id);
 
 		if (cmd === 'play') {
-			if (!args.length) return message.channel.send('You need to send the second argument!');
+			if (!args.length) return message.channel.send('Was play? Play was??');
 			let song = {};
 
 			if (ytdl.validateURL(args[0])) {
@@ -148,12 +148,12 @@ module.exports = {
 					video_player(message.guild, queue_constructor.songs[0]);
 				} catch (err) {
 					queue.delete(message.guild.id);
-					message.channel.send('There was an error connecting!');
+					message.channel.send('Heute kein drop. WLAN geht nicht...!');
 					throw err;
 				}
 			} else {
 				server_queue.songs.push(song);
-				return message.channel.send(`👍 **${song.title}** added to queue!`);
+				return message.channel.send(`👍 **${song.title}** Zur Queue hinzugefügt.!`);
 			}
 		} else if (cmd === 'skip') skip_song(message, server_queue);
 		else if (cmd === 'stop') stop_song(message, server_queue);
@@ -180,11 +180,11 @@ const video_player = async (guild, song) => {
 			song_queue.songs.shift();
 			video_player(guild, song_queue.songs[0]);
 		});
-	await song_queue.text_channel.send(`🎶 Now playing **${song.title}**`)
+	await song_queue.text_channel.send(`🎶 Jetzt spielt **${song.title}**`)
 }
 
 const skip_song = (message, server_queue) => {
-	if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
+	if (!message.member.voice.channel) return message.channel.send('Du musst in einem Channel sein akho...');
 	if (!server_queue) {
 		return message.channel.send(`There are no songs in queue`);
 	}
@@ -192,7 +192,7 @@ const skip_song = (message, server_queue) => {
 }
 
 const stop_song = (message, server_queue) => {
-	if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
+	if (!message.member.voice.channel) return message.channel.send('Du musst in einem Channel sein akho...!');
 	server_queue.songs = [];
 	server_queue.connection.dispatcher.end();
 }

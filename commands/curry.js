@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'curry',
 	description: 'This is a curry command.',
-	execute(message, args, Discord) {
+	execute(message, args, cmd, client, Discord) {
 		try {
 			var successResponse = new Discord.MessageEmbed()
 				.setColor('#FFD700')

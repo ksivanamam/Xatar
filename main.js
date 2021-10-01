@@ -1,11 +1,17 @@
 var Discord = require('discord.js')
 var client = new Discord.Client()
-var prefix = '.'
 var fs = require('fs')
 
 client.commands = new Discord.Collection()
+client.events = new Discord.Collection()
 
-var nonModsCommandFiles = fs.readdirSync('./commands/nonMods').filter(file => file.endsWith('.js'))
+var handlers = ['command_handler', 'event_handler']
+
+handlers.forEach(handler => {
+	require(`./handlers/${handler}`)(client, Discord)
+});
+
+/* var nonModsCommandFiles = fs.readdirSync('./commands/nonMods').filter(file => file.endsWith('.js'))
 for (var file of nonModsCommandFiles) {
 	var command = require(`./commands/nonMods/${file}`)
 	client.commands.set(command.name, command)
@@ -56,8 +62,8 @@ client.on('message', message => {
 			client.commands.get('play').execute(message, args)
 		} else if (command === 'leave') {
 			client.commands.get('leave').execute(message, args)
-		} 
+		}
 	}
-})
+}) */
 
 client.login('NzE1NjE1NDc5MTA3OTQ0NTAx.Xs_y2Q.Ur_oTrFioh1q-c1p3TsBysJtJQ0')

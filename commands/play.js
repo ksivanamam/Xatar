@@ -185,6 +185,7 @@ const video_player = async (guild, song) => {
 
 const skip_song = (message, server_queue) => {
 	if (!message.member.voice.channel) return message.channel.send('Du musst in einem Channel sein akho...');
+	message.channel.send('Skip skip.')
 	if (!server_queue) {
 		return message.channel.send(`There are no songs in queue`);
 	}

@@ -21,9 +21,15 @@ module.exports = {
 			let successResponse = 'Astaghfirullah...'
 			message.channel.send(successResponse)
 
-			voice.cannel.join().then((connection) => {
-				connection.play(path.join(_dirname, 'astaghfirullah.mp3'))
+			voice.cannel.join()
+			connection.play(path.join(_dirname, 'Astaghfirullah.mp3'), {
+				seek: 0,
+				volume: 1
 			})
+			.on('finish', () => {
+				voiceChannel.leave();
+				message.channel.send('Bruda muss los... Handyakku fast leer.');
+			});
 		}
 	}
 

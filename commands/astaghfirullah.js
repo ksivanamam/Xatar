@@ -18,10 +18,12 @@ module.exports = {
 		const server_queue = queue.get(message.guild.id);
 
 		if (cmd === 'astaghfirullah') {
+			let successResponse = 'Astaghfirullah...'
+			message.channel.send(successResponse)
+
 			voice.cannel.join().then((connection) => {
 				connection.play(path.join(_dirname, 'astaghfirullah.mp3'))
 			})
-
 		}
 	}
 

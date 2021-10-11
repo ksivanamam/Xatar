@@ -15,8 +15,6 @@ module.exports = {
 		if (!permissions.has('CONNECT')) return message.channel.send('Keine Rechte!');
 		if (!permissions.has('SPEAK')) return message.channel.send('Keine Rechte!');
 
-		const server_queue = queue.get(message.guild.id);
-
 		if (cmd === 'astaghfirullah') {
 			let successResponse = 'Astaghfirullah...'
 			message.channel.send(successResponse)

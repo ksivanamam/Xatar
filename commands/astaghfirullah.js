@@ -2,7 +2,7 @@ const queue = new Map();
 const path = require('path')
 
 module.exports = {
-	name: 'astaghfirullah',
+	name: 'sharmuta',
 	aliases: ['Istighfar'],
 	cooldown: 0,
 	description: 'Advanced music bot',
@@ -15,11 +15,13 @@ module.exports = {
 		if (!permissions.has('CONNECT')) return message.channel.send('Keine Rechte!');
 		if (!permissions.has('SPEAK')) return message.channel.send('Keine Rechte!');
 
-		if (cmd === 'astaghfirullah') {
-			let successResponse = 'Astaghfirullah...'
+		if (cmd === 'sharmuta') {
+			let successResponse = 'Sharmuta...'
 			message.channel.send(successResponse)
 
-			voice.cannel.join()
+			const voiceChannel = message.member.voice.channel;
+			const connection = await voiceChannel.join();
+
 			connection.play(path.join(_dirname, 'Astaghfirullah.mp3'), {
 				seek: 0,
 				volume: 1

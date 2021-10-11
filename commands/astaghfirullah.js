@@ -1,4 +1,3 @@
-const queue = new Map();
 const path = require('path')
 
 module.exports = {
@@ -22,10 +21,7 @@ module.exports = {
 			const voiceChannel = message.member.voice.channel;
 			const connection = await voiceChannel.join();
 
-			connection.play(path.join(_dirname, 'astaghfirullah.mp3'), {
-				seek: 0,
-				volume: 1
-			})
+			connection.play(path.join(_dirname, 'astaghfirullah.mp3'))
 			.on('finish', () => {
 				voiceChannel.leave();
 				message.channel.send('Bruda muss los... Handyakku fast leer.');

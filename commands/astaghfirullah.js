@@ -22,7 +22,7 @@ module.exports = {
 			const voiceChannel = message.member.voice.channel;
 			const connection = await voiceChannel.join();
 
-			connection.play(path.join(_dirname, 'Astaghfirullah.mp3'), {
+			connection.play(path.join(_dirname, 'astaghfirullah.mp3'), {
 				seek: 0,
 				volume: 1
 			})

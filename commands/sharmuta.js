@@ -21,7 +21,7 @@ module.exports = {
 			const voiceChannel = message.member.voice.channel;
 			const connection = await voiceChannel.join();
 
-			connection.play(path.join(_dirname, 'astaghfirullah.mp3'))
+			connection.play(path.join(__dirname, 'sharmuta.mp3'))
 			.on('finish', () => {
 				voiceChannel.leave();
 				message.channel.send('Bruda muss los... Handyakku fast leer.');

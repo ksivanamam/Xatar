@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
 	name: 'showEmpathy',
-	aliases: ['showEmpathy'],
+	aliases: ['empathy'],
 	cooldown: 0,
 	description: 'Advanced music bot',
 	async execute(message, args, cmd, client, Discord) {
